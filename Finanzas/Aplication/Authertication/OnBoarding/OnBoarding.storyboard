@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xEB-y5-jaJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--On Boarding Container View Controller-->
+        <scene sceneID="Q50-a0-NXy">
+            <objects>
+                <viewController id="xEB-y5-jaJ" customClass="OnBoardingContainerViewController" customModule="Finanzas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DjA-Xh-3cU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tG5-aH-6Tg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <segue destination="qzq-r5-cE4" kind="embed" identifier="openOnBoarding" id="Xi7-g4-1wI"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd3-hA-nhe">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <color key="backgroundColor" name="GreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yCC-R4-OA4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Iniciar"/>
+                                <connections>
+                                    <segue destination="VkW-2N-OoT" kind="popoverPresentation" identifier="SingIn" popoverAnchorView="wd3-hA-nhe" id="4Ey-ov-uVz">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Z0b-7h-tez">
+                                <rect key="frame" x="149" y="683" width="116" height="26"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="myo-hK-Y5A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tG5-aH-6Tg" firstAttribute="top" secondItem="DjA-Xh-3cU" secondAttribute="top" id="1cH-08-dw0"/>
+                            <constraint firstItem="myo-hK-Y5A" firstAttribute="trailing" secondItem="wd3-hA-nhe" secondAttribute="trailing" constant="20" id="KUB-FY-Iqq"/>
+                            <constraint firstItem="wd3-hA-nhe" firstAttribute="top" secondItem="Z0b-7h-tez" secondAttribute="bottom" constant="83" id="KwE-e0-mCw"/>
+                            <constraint firstItem="myo-hK-Y5A" firstAttribute="bottom" secondItem="wd3-hA-nhe" secondAttribute="bottom" constant="20" id="L2H-UD-GG6"/>
+                            <constraint firstItem="Z0b-7h-tez" firstAttribute="centerX" secondItem="DjA-Xh-3cU" secondAttribute="centerX" id="L4q-Q5-UMu"/>
+                            <constraint firstAttribute="bottom" secondItem="tG5-aH-6Tg" secondAttribute="bottom" id="Pb8-dY-haj"/>
+                            <constraint firstItem="tG5-aH-6Tg" firstAttribute="leading" secondItem="myo-hK-Y5A" secondAttribute="leading" id="dUP-Qd-cpQ"/>
+                            <constraint firstItem="wd3-hA-nhe" firstAttribute="leading" secondItem="myo-hK-Y5A" secondAttribute="leading" constant="20" id="pUQ-UD-br0"/>
+                            <constraint firstItem="tG5-aH-6Tg" firstAttribute="trailing" secondItem="myo-hK-Y5A" secondAttribute="trailing" id="tUj-IV-EUU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iniciarButton" destination="wd3-hA-nhe" id="Myc-Z1-iH3"/>
+                        <outlet property="pageControl" destination="Z0b-7h-tez" id="H3B-OF-s23"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dco-d3-Xhy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-904.34782608695662" y="123.88392857142857"/>
+        </scene>
+        <!--SingIn-->
+        <scene sceneID="iva-iu-mLs">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SingIn" storyboardName="SingIn" id="VkW-2N-OoT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J2k-u5-epC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-894" y="522"/>
+        </scene>
+        <!--On Boarding Steps View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OnBoardingSteps" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="OnBoardingStepsViewController" customModule="Finanzas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bbr-Ld-LpY">
+                                <rect key="frame" x="107" y="228" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="HBb-Qi-sQM"/>
+                                    <constraint firstAttribute="width" constant="200" id="yxO-Ts-SWJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPm-pv-6kM">
+                                <rect key="frame" x="20" y="448" width="374" height="49.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
+                                <color key="textColor" name="GreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNe-Id-Ueh">
+                                <rect key="frame" x="20" y="505.5" width="374" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" name="Graycolor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MNe-Id-Ueh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Dyr-rH-2QM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GPm-pv-6kM" secondAttribute="trailing" constant="20" id="J4M-Lb-fG7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MNe-Id-Ueh" secondAttribute="trailing" constant="20" id="R7o-Tn-dr1"/>
+                            <constraint firstItem="GPm-pv-6kM" firstAttribute="top" secondItem="bbr-Ld-LpY" secondAttribute="bottom" constant="20" id="YHE-Wh-SEO"/>
+                            <constraint firstItem="bbr-Ld-LpY" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZgG-Ow-VlQ"/>
+                            <constraint firstItem="bbr-Ld-LpY" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-120" id="mGo-NI-Ywr"/>
+                            <constraint firstItem="GPm-pv-6kM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="w5r-SG-YqL"/>
+                            <constraint firstItem="MNe-Id-Ueh" firstAttribute="top" secondItem="GPm-pv-6kM" secondAttribute="bottom" constant="8" id="w7w-cN-B0N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="MNe-Id-Ueh" id="NWS-tm-FtU"/>
+                        <outlet property="onBoaringImage" destination="bbr-Ld-LpY" id="Jza-5b-cEZ"/>
+                        <outlet property="titleLabel" destination="GPm-pv-6kM" id="mln-Of-7Fk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="124"/>
+        </scene>
+        <!--On Boarding View Controller-->
+        <scene sceneID="tvo-JU-9hb">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="qzq-r5-cE4" customClass="OnBoardingViewController" customModule="Finanzas" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="svG-9a-0Vu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="124"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Graycolor">
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GreenColor">
+            <color red="0.62352941176470589" green="0.74117647058823533" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
